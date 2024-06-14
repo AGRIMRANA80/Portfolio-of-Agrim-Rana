@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio of Agrim Rana </title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        /* CSS styles */
+        
+        body {
+            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+            background-color: beige;
+            margin: 0;
+            padding: 0;
+            color: #333;
+        }
+        nav {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 20px 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            padding: 14px 20px;
+            transition: background-color 0.3s, color 0.3s;
+            position: relative;
+        }
+        nav a:before {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 2px;
+            bottom: 0;
+            left: 0;
+            background-color: #fff;
+            visibility: hidden;
+            transform: scaleX(0);
+            transition: all 0.3s ease-in-out;
+        }
+        nav a:hover:before {
+            visibility: visible;
+            transform: scaleX(1);
+        }
+        .container {
+            max-width: 1200px;
+            margin: 40px auto;
+            padding: 0 20px;
+            animation: fadeIn 1.5s;
+        }
+        h1, h2, p {
+            text-align: center;
+            opacity: 0;
+            animation: slideIn 1s forwards;
+
+        }
+        .about-section {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-bottom: 60px;
+        }
+ .about-section img {
+    border-radius: 50%;
+    width: 350px;
+    height: 350px;
+    object-fit: cover;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s;
+    opacity: 0;
+    animation: zoomIn 1s forwards;
+    animation-delay: 0.5s;
+}
+        .about-section img:hover {
+            transform: scale(1.1);
+        }
+        .about-section p {
+            max-width: 600px;
+            margin-top: 20px;
+            line-height: 1.6;
+        }
+        .projects-section {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-bottom: 60px;
+        }
+        .project-item {
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            text-align: center;
+            opacity: 0;
+            animation: fadeInUp 1s forwards;
+        }
+        .project-item img {
+            width: 100%;
+            height: auto;
+            border-radius: 5px;
+            margin-bottom: 10px;
+        }
+        .project-item h3 {
+            font-size: 20px;
+            margin-bottom: 10px;
+        }
+        .project-item p {
+            font-size: 16px;
+            color: #777;
+        }
+        .contact-section {
+            text-align: center;
+        }
+        .contact-section p {
+            font-size: 18px;
+            margin-bottom: 20px;
+        }
+        .contact-section a {
+            display: inline-block;
+            background-color: #333;
+            color: #fff;
+            text-decoration: none;
+            padding: 12px 24px;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+        .contact-section a:hover {
+            background-color: #555;
+        }
+        footer {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 20px;
+            margin-top: 60px;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        @keyframes slideIn {
+            from { opacity: 0; transform: translateY(50px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        @keyframes zoomIn {
+            from { opacity: 0; transform: scale(0.5); }
+            to { opacity: 1; transform: scale(1); }
+        }
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(50px); }
+            to { opacity: 1; transform: translateY(0); }
+
+        }
+        .skills-section,
+    .certifications-section {
+        margin-bottom: 60px;
+    }
+    .skills-grid,
+    .certifications-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 20px;
+        justify-items: center;
+    }
+    .skill-item,
+    .certification-item {
+        background-color: #fff;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        padding: 20px;
+        text-align: center;
+        opacity: 0;
+        animation: fadeInUp 1s forwards;
+    }
+    .skill-item i,
+    .certification-item i {
+        font-size: 48px;
+        color: #333;
+        margin-bottom: 10px;
+        transition: transform 0.3s;
+    }
+    .skill-item:hover i,
+    .certification-item:hover i {
+        transform: scale(1.2);
+    }
+    .skill-item h3,
+    .certification-item h3 {
+        font-size: 20px;
+        margin-bottom: 10px;
+    }
+   img{
+    height: auto;
+   }
+   
+    
+    
+</style>
+   
+</head>
+<body>
+    <nav>
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#projects">Projects</a>
+        <a href="#skills">Skills</a>
+        <a href="#contact">Contact</a>
+    </nav>
+    <div class="container">
+        <h1 id="home">HELLO! it's me </h1>
+      
+        <h1 id="home">Agrim Rana</h1>
+        <div id="about" class="about-section">
+            <img src="pic.jpg" alt="Software Developer Photo">
+            <p>I am a dedicated and innovative AIML software engineer with a passion for leveraging the power of artificial intelligence and machine learning to solve complex problems. With a strong foundation in mathematics, statistics, and computer science, I specialize in developing intelligent systems that can learn, adapt, and make data-driven decisions.</p>
+           
+        </div>
+        <h2 id="projects">Projects</h2>
+        <div class="projects-section">
+            <div class="project-item">
+                <img src="travel adventures.jpg" alt="Project 1">
+                <h3>Project 1</h3>
+                <p> <p>Travel Adventures – A comprehensive website designed to inspire and assist travelers in discovering remarkable destinations worldwide. Whether you're an experienced traveler or planning your first trip, Travel Adventures offers a rich array of resources to enhance your travel experiences.
+
+
+
+                    My goal with Travel Adventures is to create a valuable resource for travelers, helping them uncover the beauty and diversity of our world.
+                    </p>
+            </div>
+            <div class="project-item">
+                <div class="project-info">
+                    <h3>To-Do List Application</h3>
+                    <p>The To-Do List Application is a web-based task management tool designed to help users organize and prioritize their daily tasks effectively. This intuitive and user-friendly application allows users to create, manage, and track their to-do items seamlessly.</p>
+                    <p>Key features of the To-Do List Application include:</p>
+                    <ul>
+                        <li>Task Creation: Users can easily create new tasks by entering a title and optional description.</li>
+                        <li>Task Categorization: Tasks can be categorized into different lists or projects, enabling better organization and context-based management.</li>
+                        <li>Due Dates: Users can assign due dates to tasks, helping them stay on track and manage their time efficiently.</li>
+                        <li>Priority Levels: Tasks can be assigned priority levels, allowing users to focus on high-priority items first.</li>
+                        <li>Task Filtering and Sorting: Users can filter and sort tasks based on various criteria such as due date, priority, or category, facilitating quick access to relevant information.</li>
+                        <li>Task Completion: Users can mark tasks as completed, providing a sense of accomplishment and progress tracking.</li>
+                        <li>Responsive Design: The application is built with a responsive layout, ensuring a seamless experience across different devices and screen sizes.</li>
+                    </ul>
+                    <p>The To-Do List Application is developed using modern web technologies such as HTML5, CSS3, and JavaScript.</p>
+                    
+                </div>
+            </div>
+          
+        </div>
+        <br><br><br><br><br>
+            <h1>Skills</h1>
+            <div id ="skills" class="skills-section">
+                <div class="skills-grid">
+                    <div class="skill-item">
+                        <i class="fab fa-html5"></i>
+                        <h3>HTML5</h3>
+                    </div>
+                    <div class="skill-item">
+                        <i class="fab fa-css3-alt"></i>
+                        <h3>CSS3</h3>
+                    </div>
+                    <div class="skill-item">
+                        <i class="fab fa-js"></i>
+                        <h3>JavaScript</h3>
+                    </div>
+                    <div class="skill-item">
+                        <i class="fab fa-java"></i>
+                        <h3>Java</h3>
+                    </div>
+                    <div class="skill-item">
+                        <i class="fas fa-database"></i>
+                        <h3>SQL</h3>
+                    </div>
+                    <div class="skill-item">
+                        <i class="fas fa-code"></i>
+                        <h3>Data Structures and Algorithms</h3>
+                    </div>
+
+                            <div class="skill-item">
+                                <i class="fas fa-bullhorn" ></i>
+                                <h3>Digital Marketing</h3>
+                            </div>
+                            <div class="skill-item">
+                                <i class="fas fa-lightbulb"></i>
+                                <h3>Entrepreneur</h3>
+                            </div>
+                            <div class="skill-item">
+                                <i class="fas fa-pen-nib"></i>
+                                <h3>Content Creation</h3>
+                            </div>
+                            <div class="skill-item">
+                                <i class="fas fa-comments"></i>
+                                <h3>Communication</h3>
+                            </div>
+                        </div>
+
+                </div>
+            </div>
+            <br><br><br>
+        
+            <h2>Certifications</h2>
+            <div class="certifications-section">
+                <div class="certifications-grid">
+                    <div class="certification-item">
+                        <i class="fas fa-certificate"></i>
+                        <h3> YOUTUBE-Entrepreneur</h3>
+                    </div>
+                    <div class="certification-item">
+                        <i class="fas fa-certificate"></i>
+                        <h3>Linkdln Marketing</h3>
+                    </div>
+                    <div class="certification-item">
+                        <i class="fas fa-certificate"></i>
+                        <h3>Demystifying Generative AI for leaders</h3>
+                </div>
+                <div class="certification-item">
+                    <i class="fas fa-certificate"></i>
+                    <h3>CIT</h3>
+            </div>
+            <div class="certification-item">
+                <i class="fas fa-certificate"></i>
+                <h3>Resume Building</h3>
+        </div>
+        </div>
+        <br><br><br><br><br>
+        
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+<div id="contact" class="contact-section">
+    <h2>Contact Me</h2>
+    <p>Feel free to reach out to me for any inquiries or collaboration opportunities.</p>
+    <div class="social-links">
+        <a href="https://www.linkedin.com/in/your-linkedin-profile" target="https://in.linkedin.com/in/agrim-rana-682612290">
+            <i class="fab fa-linkedin"></i>
+        </a>
+        <a href="https://www.instagram.com/your-instagram-profile" target="https://www.instagram.com/agrimranaa?igsh=ZmZ3bjQxdTR6ZmQy">
+            <i class="fab fa-instagram"></i>
+        </a>
+        <a href="https://github.com/your-github-profile" target="https://github.com/AGRIMRANA80">
+            <i class="fab fa-github"></i>
+        </a>
+    <br> <br>
+    <a href="mailto:agrimrana143@gmail.com">Send Email</a>
+    <script>
+        // Smooth scrolling navigation
+        const navLinks = document.querySelectorAll('nav a');
+        navLinks.forEach(link => {
+            link.addEventListener('click', e => {
+                e.preventDefault();
+                const targetId = link.getAttribute('href');
+                const targetSection = document.querySelector(targetId);
+                targetSection.scrollIntoView({ behavior: 'smooth' });
+            });
+        });
+    
+        // Project item hover effect
+        const projectItems = document.querySelectorAll('.project-item');
+        projectItems.forEach(item => {
+            item.addEventListener('mouseover', () => {
+                item.style.transform = 'translateY(-5px)';
+                item.style.boxShadow = '0 8px 16px rgba(0, 0, 0, 0.2)';
+            });
+            item.addEventListener('mouseout', () => {
+                item.style.transform = 'translateY(0)';
+                item.style.boxShadow = '0 4px 8px rgba(0, 0, 0, 0.1)';
+            });
+        });
+    
+        // Skill item click effect
+        const skillItems = document.querySelectorAll('.skill-item');
+        skillItems.forEach(item => {
+            item.addEventListener('click', () => {
+                item.classList.toggle('active');
+            });
+        });
+    
+        // Certification item click effect
+        const certificationItems = document.querySelectorAll('.certification-item');
+        certificationItems.forEach(item => {
+            item.addEventListener('click', () => {
+                item.classList.toggle('active');
+            });
+        });
+
+    </script>
+
+
+
+
+
+</div>
+    <footer>
+        &copy; 2024 Agrim Rana. All rights reserved.
+    </footer>
